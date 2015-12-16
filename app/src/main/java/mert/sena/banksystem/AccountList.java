@@ -9,9 +9,9 @@ public class AccountList{
     public AccountList() {
     }
 
-    public boolean addAccount(String type, String name, String detail, double limit, String username, String password){
+    public boolean addAccount(String name, String detail, double limit, String username, String password){
         if(isUserAvailable(username)){
-        Account dummy = new Account(type,name,detail,10000,325,limit,username,password);
+        Account dummy = new Account(name,detail,10000,325,limit,username,password);
         boolean flag = list.add(dummy);
 
         return flag;
@@ -76,14 +76,14 @@ public class AccountList{
         return null;
     }
     
-    public Account getObj(String username,String password){
-        for (Account a:list){
-            if(a.getUsername().compareTo(username)==0 && a.getPassword().compareTo(password)==0)
-                return a;
-        }
-        return null;
-    }
-    
+//    public Account getObj(String username,String password){
+//        for (Account a:list){
+//            if(a.getUsername().compareTo(username)==0 && a.getPassword().compareTo(password)==0)
+//                return a;
+//        }
+//        return null;
+//    }
+
 
     public int findAccount(String username){
         for (Account a:list) {
@@ -92,6 +92,8 @@ public class AccountList{
         }
         return -1;
     }
+
+
     
     public boolean checkAccount(String username,String password){
         for(Account a:list){
@@ -104,9 +106,9 @@ public class AccountList{
         return false;
     }
     
-    public boolean withdraw(int accountid,double amount){
+    public boolean withdraw(int accountId,double amount){
         for(Account a:list){
-            if(a.getId()==accountid){
+            if(a.getId()==accountId){
                  a.removeMoney(amount);
                  return true;
             }  

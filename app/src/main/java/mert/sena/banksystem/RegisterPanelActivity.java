@@ -25,8 +25,7 @@ public class RegisterPanelActivity extends AppCompatActivity {
                         TextView usernameText = (TextView)findViewById(R.id.usernameText);
                         TextView passwordText = (TextView)findViewById(R.id.passwordText);
                         TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
-                        if(app.accounts.addAccount("normal",
-                                nameText.getText().toString(), addressText.getText().toString(),
+                        if(app.accounts.addAccount(nameText.getText().toString(), addressText.getText().toString(),
                                 Integer.parseInt(String.valueOf(limitText.getText())),
                                 usernameText.getText().toString(),
                                 passwordText.getText().toString())) {

@@ -36,7 +36,7 @@ public class TransferActivity extends AppCompatActivity {
                                             message.getText().toString());
                             if(flag){
                                 TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
-                                statusLabel.setText("Status : Transfered!");
+                                statusLabel.setText(app.accounts.getObj(app.currentid).addStack("asdasd"));
                             }else{
                                 TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
                                 statusLabel.setText("Status : Not enough money!");

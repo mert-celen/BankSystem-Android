@@ -12,11 +12,10 @@ public class WithdrawMoneyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_withdraw_money);
-        Account dummy = app.accounts.getObj(app.currentid);
         TextView currentMoney = (TextView)findViewById(R.id.currentMoney);
         TextView welcomeText = (TextView)findViewById(R.id.welcomeText);
-        welcomeText.setText(dummy.getName());
-        currentMoney.setText("Current amount : " + Double.toString(dummy.getAmount()));
+        welcomeText.setText(app.accounts.getObj(app.currentid).getName());
+        currentMoney.setText("Current amount : " + Double.toString(app.accounts.getObj(app.currentid).getAmount()));
 
         Button withdrawButton = (Button)findViewById(R.id.withdrawButton);
 
@@ -27,7 +26,7 @@ public class WithdrawMoneyActivity extends AppCompatActivity {
                         boolean flag;
                         TextView moneyToDraw = (TextView)findViewById(R.id.moneyToDraw);
                         TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
-
+                        //todo delete getobj and change it to withdraw function
                         flag = app.accounts.getObj(app.currentid).removeMoney(Double.parseDouble
                                 (String.valueOf(moneyToDraw.getText())));
                         if(flag){

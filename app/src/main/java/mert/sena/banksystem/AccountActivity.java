@@ -1,11 +1,13 @@
 package mert.sena.banksystem;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AccountActivity extends AppCompatActivity {
 
@@ -13,6 +15,9 @@ public class AccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+        while(app.accounts.getObj(app.currentid).hasmoreStack()){
+            displayMessage(app.accounts.getObj(app.currentid).getfromStack());
+        }
         this.init();
 
     }
@@ -66,5 +71,14 @@ public class AccountActivity extends AppCompatActivity {
         app.currentid=0;
         Intent intent1 = new Intent(AccountActivity.this,MainActivity.class);
         startActivity(intent1);
+    }
+
+    public void displayMessage(String s){
+        Context context = getApplicationContext();
+        CharSequence text = s;
+        int duration = Toast.LENGTH_LONG;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 }

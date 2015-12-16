@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         //init
         app.loadApp();
-        app.accounts.addAccount("user", "Mert ÇELEN", "Bilkent Universitesi", 10000, "mert", "mert");
+        app.accounts.addAccount("Mert ÇELEN", "Bilkent Universitesi", 10000, "mert", "mert");
+        app.accounts.addAccount("Sena Altun", "Bilkent Universitesi", 10000, "sena", "sena");
 
         Button loginButton = (Button)findViewById(R.id.loginButton);
         Button registerButton = (Button)findViewById(R.id.registerButton);

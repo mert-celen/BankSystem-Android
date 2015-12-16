@@ -3,7 +3,6 @@ package mert.sena.banksystem;
 import java.util.Stack;
 
 public class Account{
-    private String type;
     private String name;
     private String detail;
     private double amount;
@@ -14,11 +13,10 @@ public class Account{
     private double original_limit;
     private String username;
     private String password;
-    private Stack messages;
+    public Stack messages;
 
 
-    public Account(String type, String name, String detail, double amount, double dept, double limit, String username, String password) {
-        this.type = type;
+    public Account(String name, String detail, double amount, double dept, double limit, String username, String password) {
         this.name = name;
         this.detail = detail;
         this.amount = amount;
@@ -29,6 +27,7 @@ public class Account{
         this.password = password;
         this.id = nextId++;
         app.currentid = this.id;
+        messages = new Stack();
     }
 
     public void addMoney(double m){
@@ -61,10 +60,6 @@ public class Account{
             return true;
         }
         return false;
-    }
-
-    public String getType() {
-        return type;
     }
 
     public String getName() {
@@ -103,15 +98,19 @@ public class Account{
         return password;
     }
 
-    public void addStack(String s){
+    public String addStack(String s){
         messages.add(s);
+        return messages.pop().toString();
     }
 
     public String getfromStack(){
         return messages.pop().toString();
     }
 
-    public int hasmoreStack(){
-        return messages.size();
+    public boolean hasmoreStack(){
+        if (messages.size()>0)
+            return true;
+        else
+            return false;
     }
 }
