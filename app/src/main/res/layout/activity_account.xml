@@ -79,16 +79,7 @@
         android:width="175dp"
         android:height="75dp"
         android:layout_below="@+id/withdrawButton"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TRANSFER LIST"
-        android:id="@+id/transListButton"
-        android:width="175dp"
-        android:height="75dp"
-        android:layout_alignBottom="@+id/transferButton"
-        android:layout_alignStart="@+id/payDeptButton" />
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/payDeptButton" />
 
 </RelativeLayout>

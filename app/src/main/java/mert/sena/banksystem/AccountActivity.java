@@ -54,7 +54,8 @@ public class AccountActivity extends AppCompatActivity {
         transferButton.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
-
+                        Intent intent1 = new Intent(AccountActivity.this, TransferActivity.class);
+                        startActivity(intent1);
                     }
                 }
         );

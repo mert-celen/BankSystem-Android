@@ -124,12 +124,13 @@ public class AccountList{
         return false;
     }
     
-    public boolean transfer(int accountid1,int accountid2,double amount){
+    public boolean transfer(int accountid1,int accountid2,double amount,String message){
         boolean flag=false;
         if(canPay(accountid1, amount)){
             for(Account a:list){
                 if(a.getId()==accountid2){
                     a.addMoney(amount);
+                    a.addStack(message);
                     flag=true;
                     for(Account b:list){
                         if(b.getId()==accountid1)

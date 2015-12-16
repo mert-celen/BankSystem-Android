@@ -25,8 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="All dept : "
-        android:id="@+id/allDept"
+        android:text="Total dept : "
+        android:id="@+id/totalDept"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
@@ -34,9 +34,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="All Money :"
-        android:id="@+id/allMoney"
-        android:layout_below="@+id/allDept"
+        android:text="Total Money :"
+        android:id="@+id/totalMoney"
+        android:layout_below="@+id/totalDept"
         android:layout_alignParentStart="true"
         android:layout_marginTop="30dp" />
 
@@ -46,7 +46,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Total Users:"
         android:id="@+id/userCount"
-        android:layout_below="@+id/allMoney"
+        android:layout_below="@+id/totalMoney"
         android:layout_alignParentStart="true"
         android:layout_marginTop="30dp" />
 

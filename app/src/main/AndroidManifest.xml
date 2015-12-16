@@ -27,7 +27,8 @@
             android:name=".WithdrawMoneyActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".RegisterPanelActivity" />
-        <activity android:name=".AdminPanelActivity"></activity>
+        <activity android:name=".AdminPanelActivity" />
+        <activity android:name=".TransferActivity"></activity>
     </application>
 
 </manifest>

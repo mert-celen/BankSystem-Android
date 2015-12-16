@@ -1,5 +1,7 @@
 package mert.sena.banksystem;
 
+import java.util.Stack;
+
 public class Account{
     private String type;
     private String name;
@@ -12,6 +14,8 @@ public class Account{
     private double original_limit;
     private String username;
     private String password;
+    private Stack messages;
+
 
     public Account(String type, String name, String detail, double amount, double dept, double limit, String username, String password) {
         this.type = type;
@@ -99,4 +103,15 @@ public class Account{
         return password;
     }
 
+    public void addStack(String s){
+        messages.add(s);
+    }
+
+    public String getfromStack(){
+        return messages.pop().toString();
+    }
+
+    public int hasmoreStack(){
+        return messages.size();
+    }
 }
