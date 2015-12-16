@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="mert.sena.banksystem.AccountActivity"
+    android:background="#637bf4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="welcomeText"
+        android:id="@+id/welcomeText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="deptText"
+        android:id="@+id/deptText"
+        android:layout_below="@+id/welcomeText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="amountText"
+        android:id="@+id/amountText"
+        android:layout_below="@+id/deptText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="limitText"
+        android:id="@+id/limitText"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WITHDRAW MONEY"
+        android:id="@+id/withdrawButton"
+        android:layout_below="@+id/limitText"
+        android:layout_alignParentStart="true"
+        android:width="175dp"
+        android:layout_alignParentEnd="false"
+        android:height="75dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pay Dept"
+        android:id="@+id/payDeptButton"
+        android:width="175dp"
+        android:layout_alignTop="@+id/withdrawButton"
+        android:layout_alignParentEnd="true"
+        android:height="75dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Money"
+        android:id="@+id/transferButton"
+        android:width="175dp"
+        android:height="75dp"
+        android:layout_below="@+id/withdrawButton"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRANSFER LIST"
+        android:id="@+id/transListButton"
+        android:width="175dp"
+        android:height="75dp"
+        android:layout_alignBottom="@+id/transferButton"
+        android:layout_alignStart="@+id/payDeptButton" />
+
+</RelativeLayout>
