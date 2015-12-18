@@ -46,7 +46,7 @@ public class AdminPanelActivity extends AppCompatActivity {
         payDepts.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
                 double sum=0;
-                for (Account a:app.accounts.list){
+                for (Account a: app.accounts.list){
                     sum+=a.getDept();
                     a.payDept(a.getDept());
                 }

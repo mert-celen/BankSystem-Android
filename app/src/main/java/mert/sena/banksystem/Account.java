@@ -1,8 +1,11 @@
 package mert.sena.banksystem;
 
+import android.util.Log;
+
+import java.io.Serializable;
 import java.util.Stack;
 
-public class Account{
+public class Account implements Serializable{
     private String name;
     private String detail;
     private double amount;
@@ -100,6 +103,7 @@ public class Account{
 
     public String addStack(String s){
         messages.add(s);
+        Log.i("mertFilter","Stack eklendi");
         return messages.pop().toString();
     }
 

@@ -18,21 +18,29 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
+    }
+
+    public void init() {
 
         //init
-        app.loadApp();
+        if (app.flag) {
+            app.loadApp();
+            app.flag = false;
+        }
+
         app.accounts.addAccount("Mert ÇELEN", "Bilkent Universitesi", 10000, "mert", "mert");
         app.accounts.addAccount("Sena Altun", "Bilkent Universitesi", 10000, "sena", "sena");
 
-        Button loginButton = (Button)findViewById(R.id.loginButton);
-        Button registerButton = (Button)findViewById(R.id.registerButton);
-        Button adminButton = (Button)findViewById(R.id.adminButton);
+        Button loginButton = (Button) findViewById(R.id.loginButton);
+        Button registerButton = (Button) findViewById(R.id.registerButton);
+        Button adminButton = (Button) findViewById(R.id.adminButton);
 
 
         loginButton.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
-                        Intent intent1 = new Intent(MainActivity.this,LoginActivity.class);
+                        Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
                         startActivity(intent1);
                     }
                 }
@@ -40,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         registerButton.setOnClickListener(
-                new Button.OnClickListener(){
-                    public void onClick(View v){
-                        Intent intent1 = new Intent(MainActivity.this,RegisterPanelActivity.class);
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        Intent intent1 = new Intent(MainActivity.this, RegisterPanelActivity.class);
                         startActivity(intent1);
                     }
                 }
@@ -50,20 +58,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         adminButton.setOnClickListener(
-                new Button.OnClickListener(){
-                    public void onClick(View v){
-                            checkAdmin();
-                            if(adminPassword.compareTo("aaaa")==0){
-                                Intent intent1 = new Intent(MainActivity.this,AdminPanelActivity.class);
-                                startActivity(intent1);
-                                adminPassword = "";
-                            }
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        checkAdmin();
+                        if (adminPassword.compareTo("aaaa") == 0) {
+                            Intent intent1 = new Intent(MainActivity.this, AdminPanelActivity.class);
+                            startActivity(intent1);
+                            adminPassword = "";
+                        }
                     }
                 }
         );
     }
 
-    private void checkAdmin(){
+    private void checkAdmin() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Enter Admin Password!");
         final EditText input = new EditText(this);
@@ -87,4 +95,5 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         //do nothing
     }
+
 }

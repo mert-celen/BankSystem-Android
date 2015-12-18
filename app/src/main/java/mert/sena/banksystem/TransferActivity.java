@@ -31,12 +31,12 @@ public class TransferActivity extends AppCompatActivity {
                         boolean flag;
                         if(app.accounts.findAccount(receiverId)!=-1){
                             flag = app.accounts.transfer(app.accounts.findAccount(receiverId)
-                            ,app.currentid,Integer.parseInt(amount.getText().toString()),
+                            , app.currentid,Integer.parseInt(amount.getText().toString()),
                                     "Incoming EFT from " + app.accounts.getObj(app.currentid).getName() +
                                             message.getText().toString());
                             if(flag){
                                 TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
-                                statusLabel.setText(app.accounts.getObj(app.currentid).addStack("asdasd"));
+                                statusLabel.setText("Status = Transfer completed!");
                             }else{
                                 TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
                                 statusLabel.setText("Status : Not enough money!");

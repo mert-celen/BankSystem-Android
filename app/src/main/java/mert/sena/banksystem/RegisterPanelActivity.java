@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 public class RegisterPanelActivity extends AppCompatActivity {
 
     @Override
@@ -31,6 +33,18 @@ public class RegisterPanelActivity extends AppCompatActivity {
                                 passwordText.getText().toString())) {
                                 //
                             statusLabel.setText("User Created!");
+                            try {
+                                FileManagement.save();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            try {
+                                FileManagement.load();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            } catch (ClassNotFoundException e) {
+                                e.printStackTrace();
+                            }
                             Intent intent1 = new Intent(RegisterPanelActivity.this,AccountActivity.class);
                             startActivity(intent1);
                         }
