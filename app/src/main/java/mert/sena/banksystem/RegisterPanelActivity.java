@@ -25,12 +25,14 @@ public class RegisterPanelActivity extends AppCompatActivity {
                         TextView addressText = (TextView)findViewById(R.id.addressText);
                         TextView limitText = (TextView)findViewById(R.id.limitText);
                         TextView usernameText = (TextView)findViewById(R.id.usernameText);
+                        TextView pinCodeText = (TextView)findViewById(R.id.pinCodeText);
                         TextView passwordText = (TextView)findViewById(R.id.passwordText);
                         TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
                         if(app.accounts.addAccount(nameText.getText().toString(), addressText.getText().toString(),
                                 Integer.parseInt(String.valueOf(limitText.getText())),
                                 usernameText.getText().toString(),
-                                passwordText.getText().toString())) {
+                                passwordText.getText().toString(),
+                        Integer.parseInt(pinCodeText.getText().toString()))) {
                                 //
                             statusLabel.setText("User Created!");
                             try {

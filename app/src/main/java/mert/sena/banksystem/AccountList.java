@@ -9,9 +9,9 @@ public class AccountList{
     public AccountList() {
     }
 
-    public boolean addAccount(String name, String detail, double limit, String username, String password){
+    public boolean addAccount(String name, String detail, double limit, String username, String password,int pinCode){
         if(isUserAvailable(username)){
-        Account dummy = new Account(name,detail,10000,325,limit,username,password);
+        Account dummy = new Account(name,detail,10000,325,limit,username,password,pinCode);
         boolean flag = list.add(dummy);
 
         return flag;

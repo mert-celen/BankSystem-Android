@@ -85,11 +85,11 @@
         android:layout_height="wrap_content"
         android:text="REGISTER"
         android:id="@+id/registerButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="63dp"
+        android:layout_marginBottom="36dp"
         android:width="200dp"
-        android:height="75dp" />
+        android:height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -126,6 +126,26 @@
         android:id="@+id/textView6"
         android:layout_alignTop="@+id/passwordText"
         android:layout_alignStart="@+id/textView4"
+        android:layout_marginTop="6dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:ems="10"
+        android:id="@+id/pinCodeText"
+        android:layout_below="@+id/passwordText"
+        android:layout_alignStart="@+id/passwordText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Pin Code"
+        android:id="@+id/textView9"
+        android:layout_alignTop="@+id/pinCodeText"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/pinCodeText"
         android:layout_marginTop="6dp" />
 
 </RelativeLayout>

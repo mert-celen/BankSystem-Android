@@ -55,11 +55,10 @@
         android:layout_height="wrap_content"
         android:text="WITHDRAW MONEY"
         android:id="@+id/withdrawButton"
-        android:layout_below="@+id/limitText"
-        android:layout_alignParentStart="true"
         android:width="175dp"
-        android:layout_alignParentEnd="false"
-        android:height="75dp" />
+        android:height="75dp"
+        android:layout_above="@+id/transferButton"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -78,8 +77,21 @@
         android:id="@+id/transferButton"
         android:width="175dp"
         android:height="75dp"
-        android:layout_below="@+id/withdrawButton"
+        android:layout_above="@+id/statusLabel"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/payDeptButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Status : Ready"
+        android:id="@+id/statusLabel"
+        android:layout_toStartOf="@+id/limitText"
+        android:width="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/transferButton"
+        android:height="40dp"
+        android:layout_marginTop="4dp" />
 
 </RelativeLayout>

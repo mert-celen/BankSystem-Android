@@ -15,37 +15,30 @@
         android:layout_height="wrap_content"
         android:text="LOGIN"
         android:id="@+id/loginButton"
-        android:layout_above="@+id/registerButton"
-        android:layout_alignStart="@+id/registerButton"
         android:width="250dp"
-        android:height="120dp" />
+        android:height="120dp"
+        android:layout_below="@+id/currentButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REGISTER"
         android:id="@+id/registerButton"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/adminButton"
         android:width="250dp"
-        android:height="120dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ADMIN PANEL"
-        android:id="@+id/adminButton"
-        android:layout_below="@+id/registerButton"
-        android:layout_centerHorizontal="true"
-        android:width="250dp"
-        android:height="120dp" />
+        android:height="120dp"
+        android:layout_below="@+id/loginButton"
+        android:layout_alignStart="@+id/loginButton"
+        android:layout_marginTop="44dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Welcome CTIS Bank"
+        android:text="Welcome to the CTIS Bank"
         android:id="@+id/currentButton"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignEnd="@+id/loginButton"
+        android:layout_marginTop="34dp" />
 </RelativeLayout>

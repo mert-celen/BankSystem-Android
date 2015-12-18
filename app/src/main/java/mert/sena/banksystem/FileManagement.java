@@ -21,7 +21,7 @@ import java.util.ArrayList;
     }
 
     public static void save() throws IOException {
-        Log.i("mertFilter","save girdi");
+//        Log.i("mertFilter","save girdi");
         FileOutputStream fos = new FileOutputStream("users.bin");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(app.accounts.list);
@@ -29,7 +29,7 @@ import java.util.ArrayList;
     }
 
     public static void load() throws IOException, ClassNotFoundException {
-        Log.i("mertFilter","load girdi");
+//        Log.i("mertFilter","load girdi");
         FileInputStream fis = new FileInputStream("users.bin");
         ObjectInputStream ois = new ObjectInputStream(fis);
         app.accounts.list = (ArrayList<Account>) ois.readObject();

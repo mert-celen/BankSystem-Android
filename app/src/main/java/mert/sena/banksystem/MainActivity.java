@@ -9,11 +9,11 @@ import android.text.InputType;
 import android.widget.Button;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private String adminPassword = "";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
             app.flag = false;
         }
 
-        app.accounts.addAccount("Mert ÇELEN", "Bilkent Universitesi", 10000, "mert", "mert");
-        app.accounts.addAccount("Sena Altun", "Bilkent Universitesi", 10000, "sena", "sena");
+        app.accounts.addAccount("Mert ÇELEN", "Bilkent Universitesi", 10000, "mert", "mert",1111);
+        app.accounts.addAccount("Sena Altun", "Bilkent Universitesi", 10000, "sena", "sena",1111);
 
         Button loginButton = (Button) findViewById(R.id.loginButton);
         Button registerButton = (Button) findViewById(R.id.registerButton);
-        Button adminButton = (Button) findViewById(R.id.adminButton);
+        TextView adminButton = (TextView) findViewById(R.id.currentButton);
 
 
         loginButton.setOnClickListener(
@@ -61,11 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         checkAdmin();
-                        if (adminPassword.compareTo("aaaa") == 0) {
-                            Intent intent1 = new Intent(MainActivity.this, AdminPanelActivity.class);
-                            startActivity(intent1);
-                            adminPassword = "";
-                        }
                     }
                 }
         );
@@ -81,6 +76,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 adminPassword = input.getText().toString();
+                if (adminPassword.compareTo("aaaa") == 0) {
+
+                    Intent intent1 = new Intent(MainActivity.this, AdminPanelActivity.class);
+                    startActivity(intent1);
+                    adminPassword = "";
+                }
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
