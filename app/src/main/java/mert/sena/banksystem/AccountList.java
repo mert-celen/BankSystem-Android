@@ -126,7 +126,7 @@ public class AccountList{
         return false;
     }
     
-    public boolean transfer(int accountid1,int accountid2,double amount,String message){
+    public boolean transfer(int accountid2,int accountid1,double amount,String message){
         boolean flag=false;
         if(canPay(accountid1, amount)){
             for(Account a:list){
