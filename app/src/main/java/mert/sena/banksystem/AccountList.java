@@ -1,5 +1,7 @@
 package mert.sena.banksystem;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class AccountList{
@@ -142,5 +144,29 @@ public class AccountList{
             }
         }
         return flag;
+    }
+
+    public boolean checkPin(String username,int pin){
+        for (Account a: list) {
+            if(a.getName().compareTo(username)==0){
+                Log.i("mertFilter","user bulundu");
+                if(a.getPinCode() == pin){
+                    Log.i("mertFilter","pin dogru ");
+                    return true;
+                }else
+                    Log.i("mertFilter","pin yanlis " + a.getPinCode() + ""+ pin);
+            }
+
+
+        }
+        return false;
+    }
+
+
+    public void setPassword(String username,String password){
+        for (Account a: list) {
+            if(a.getName().compareTo(username)==0)
+                a.setPassword(password);
+        }
     }
 }

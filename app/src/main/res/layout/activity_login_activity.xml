@@ -10,16 +10,6 @@
     tools:context=".LoginActivity"
     android:background="#637bf4">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/passwordBox"
-        android:width="250dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,18 +17,46 @@
         android:id="@+id/loginButton"
         android:width="250dp"
         android:height="70dp"
-        android:layout_below="@+id/passwordBox"
-        android:layout_alignStart="@+id/passwordBox"
-        android:layout_marginTop="56dp" />
+        android:layout_above="@+id/forgotPw"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Ready"
+        android:text="Username"
+        android:id="@+id/textView10"
+        android:layout_alignTop="@+id/usernameBox"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Password"
+        android:id="@+id/textView11"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/usernameBox"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:id="@+id/forgotPw"
+        android:width="250dp"
+        android:layout_above="@+id/statusLabel"
+        android:layout_alignStart="@+id/loginButton"
+        android:layout_marginBottom="54dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Status : Ready"
         android:id="@+id/statusLabel"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -47,6 +65,15 @@
         android:ems="10"
         android:id="@+id/usernameBox"
         android:layout_above="@+id/passwordBox"
-        android:layout_centerHorizontal="true"
-        android:width="250dp" />
+        android:layout_alignStart="@+id/passwordBox" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passwordBox"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

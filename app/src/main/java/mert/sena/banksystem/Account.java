@@ -110,4 +110,12 @@ public class Account {
         else
             return false;
     }
+
+    public int getPinCode() {
+        return pinCode;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
