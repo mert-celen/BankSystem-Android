@@ -17,7 +17,6 @@ public class Account {
     private Stack messages;
     private int pinCode;
 
-
     public Account(String name, String detail, double amount, double dept, double limit, String username, String password,int pinCode) {
         this.name = name;
         this.detail = detail;
@@ -69,7 +68,6 @@ public class Account {
     public String getName() {
         return name;
     }
-
 
     public double getAmount() {
         return amount;

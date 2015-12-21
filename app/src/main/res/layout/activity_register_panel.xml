@@ -25,9 +25,9 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/nameText"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="41dp"
         android:layout_below="@+id/statusLabel"
-        android:layout_alignStart="@+id/statusLabel" />
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
