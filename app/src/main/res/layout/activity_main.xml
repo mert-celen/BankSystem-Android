@@ -41,4 +41,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignEnd="@+id/loginButton"
         android:layout_marginTop="34dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Loading..."
+        android:id="@+id/updatesText"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
