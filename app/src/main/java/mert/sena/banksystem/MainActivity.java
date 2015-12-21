@@ -45,10 +45,7 @@ public class MainActivity extends AppCompatActivity {
         Button registerButton = (Button) findViewById(R.id.registerButton);
         TextView adminButton = (TextView) findViewById(R.id.currentButton);
         final TextView updatesText = (TextView)findViewById(R.id.updatesText);
-        TextView t = (TextView)findViewById(R.id.textView12);
-        t.setText("test");
-
-
+        Log.i("mertFilter","deneme");
         firebase = new Firebase("https://sweltering-torch-6571.firebaseio.com/Testing");
         updatesText.setText(firebase.getKey().toString());
 
@@ -70,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
 //                        Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
-//                        startActivity(intent1);2
+//                        startActivity(intent1);
                         Firebase database = new Firebase("https://sweltering-torch-6571.firebaseio.com/");
                         database.createUser("deneme", "deneme", new Firebase.ValueResultHandler<Map<String, Object>>() {
                             @Override
@@ -82,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onError(FirebaseError firebaseError) {
                                 Log.i("mertFilter", "error");
-                                System.out.println("error");
+                                System.out.println("hata");
                             }
                         });
                     }

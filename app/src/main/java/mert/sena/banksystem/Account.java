@@ -105,10 +105,7 @@ public class Account {
 
     public boolean hasmoreStack() {
 
-        if (messages.size() > 0)
-            return true;
-        else
-            return false;
+        return messages.size() > 0;
     }
 
     public int getPinCode() {
