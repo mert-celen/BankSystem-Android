@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".RegisterPanelActivity"
-    android:background="#637bf4">
+    android:background="#598584">
 
     <TextView
         android:layout_width="wrap_content"

@@ -54,14 +54,6 @@ public class AccountList{
         return total;
     }
 
-    public String getDetails(int id){
-        for (Account a:list) {
-            if(a.getId()==id)
-                return a.toString();
-        }
-        return null;
-    }
-
     public boolean payDept(int id,double amount){
         for (Account a:list) {
             if(a.getId()==id)
@@ -99,16 +91,6 @@ public class AccountList{
         return false;
     }
     
-    public boolean withdraw(int accountId,double amount){
-        for(Account a:list){
-            if(a.getId()==accountId){
-                 a.removeMoney(amount);
-                 return true;
-            }  
-        }
-        return false;
-    }
-    
     public boolean canPay(int accountid,double amount){
         for(Account a:list){
             if(a.getId()==accountid){
@@ -138,38 +120,25 @@ public class AccountList{
     }
 
     public boolean checkPin(String username,int pin){
-        for (Account a: list) {
-            if(a.getName().compareTo(username)==0){
-                Log.i("mertFilter","user bulundu");
-                if(a.getPinCode() == pin){
-                    Log.i("mertFilter","pin dogru ");
+        for (Account a: list)
+            if(a.getUsername().compareTo(username)==0)
+                if(a.getPinCode() == pin)
                     return true;
-                }else
-                    Log.i("mertFilter","pin yanlis " + a.getPinCode() + ""+ pin);
-            }
-
-
-        }
         return false;
     }
 
 
     public void setPassword(String username,String password){
         for (Account a: list) {
-            if(a.getName().compareTo(username)==0)
+            if(a.getUsername().compareTo(username)==0)
                 a.setPassword(password);
         }
     }
 
 
     public void addDept(double amount,String username){
-        for (Account a: list) {
-            if(a.getUsername().compareTo(username)==0){
+        for (Account a: list)
+            if(a.getUsername().compareTo(username)==0)
                 a.addDept(amount);
-                System.out.println("dept added");
-                break;
-            }
-
-        }
     }
 }

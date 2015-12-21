@@ -8,12 +8,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="mert.sena.banksystem.AdminPanelActivity"
-    android:background="#637bf4">
+    android:background="#598584">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pay All Depts"
+        android:text="Pay All Debts"
         android:id="@+id/payDept"
         android:width="175dp"
         android:height="75dp"
@@ -69,5 +69,25 @@
         android:width="350dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Money"
+        android:id="@+id/addMoneyButton"
+        android:layout_above="@+id/payDept"
+        android:layout_alignStart="@+id/statusLabel"
+        android:width="350dp"
+        android:height="75dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Debt"
+        android:id="@+id/addDeptButton"
+        android:layout_above="@+id/addMoneyButton"
+        android:layout_alignStart="@+id/addMoneyButton"
+        android:width="350dp"
+        android:height="75dp" />
 
 </RelativeLayout>

@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".LoginActivity"
-    android:background="#637bf4">
+    android:background="#598584">
 
     <Button
         android:layout_width="wrap_content"
@@ -26,7 +26,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Username"
         android:id="@+id/textView10"
-        android:layout_alignTop="@+id/usernameBox"
+        android:layout_alignBaseline="@+id/usernameBox"
+        android:layout_alignBottom="@+id/usernameBox"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -47,7 +48,8 @@
         android:width="250dp"
         android:layout_above="@+id/statusLabel"
         android:layout_alignStart="@+id/loginButton"
-        android:layout_marginBottom="54dp" />
+        android:layout_marginBottom="54dp"
+        android:height="75dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,7 +67,8 @@
         android:ems="10"
         android:id="@+id/usernameBox"
         android:layout_above="@+id/passwordBox"
-        android:layout_alignStart="@+id/passwordBox" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="76dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -73,7 +76,8 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/passwordBox"
-        android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/loginButton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="65dp" />
 
 </RelativeLayout>

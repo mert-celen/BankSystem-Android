@@ -17,7 +17,7 @@ private boolean flag;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cashier);
         TextView username = (TextView)findViewById(R.id.usernameText);
-        username.setFocusable(true);
+        username.requestFocus();
         System.out.println("deneme");
         Button askpinButton = (Button)findViewById(R.id.askpinButton);
         askpinButton.setOnClickListener(
@@ -54,8 +54,12 @@ private boolean flag;
             public void onClick(DialogInterface dialog, int which) {
                 if (app.accounts.getObj(app.accounts.findAccount(s)).getPinCode()
                         == Integer.parseInt(input.getText().toString())) {
-                    app.accounts.addDept(amount,s);
+                    app.accounts.addDept(amount, s);
                     statusLabel.setText("Status : Dept added!");
+                    TextView t1 = (TextView)findViewById(R.id.usernameText);
+                    TextView t2 = (TextView)findViewById(R.id.amountText);
+                    t1.setText("");
+                    t2.setText("");
                 } else {
                     statusLabel.setText("Status : Canceled!");
                     flag = false;

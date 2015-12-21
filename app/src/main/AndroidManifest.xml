@@ -25,15 +25,19 @@
         <activity
             android:name=".AccountActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".RegisterPanelActivity" />
-        <activity android:name=".AdminPanelActivity" />
-        <activity android:name=".TransferActivity" />
+        <activity android:name=".RegisterPanelActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminPanelActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TransferActivity"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".CashierActivity"></activity>
+        <activity android:name=".CashierActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

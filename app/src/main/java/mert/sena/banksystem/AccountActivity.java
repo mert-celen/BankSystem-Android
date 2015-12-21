@@ -41,7 +41,7 @@ public class AccountActivity extends AppCompatActivity {
         Account dummy = app.accounts.getObj(app.currentid);
 
         name.setText(dummy.getName());
-        dept.setText("Total Dept : " + String.valueOf(dummy.getDept()));
+        dept.setText("Total Debt : " + String.valueOf(dummy.getDept()));
         amount.setText("Total Money : " + String.valueOf(dummy.getAmount()));
         limit.setText("Total Limit : " + String.valueOf(dummy.getLimit()));
 

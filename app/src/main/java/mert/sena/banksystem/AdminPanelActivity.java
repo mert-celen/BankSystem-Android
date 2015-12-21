@@ -15,18 +15,17 @@ public class AdminPanelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_panel);
-
         init();
-
         final Button removeAccount = (Button)findViewById(R.id.removeAccount);
         Button payDept = (Button)findViewById(R.id.payDept);
+        Button addMoneyButton = (Button)findViewById(R.id.addMoneyButton);
+        Button addDeptButton = (Button)findViewById(R.id.addDeptButton);
 
         removeAccount.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
                 deleteAccount();
             }
         });
-
         payDept.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
                 double sum=0;
@@ -36,7 +35,19 @@ public class AdminPanelActivity extends AppCompatActivity {
                     init();
                 }
                 TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
-                statusLabel.setText("Status : "+ sum + " dept gone!"); //maybe better explanation
+                statusLabel.setText("Status : " + sum + " dept gone!"); //maybe better explanation
+            }
+        });
+
+        addMoneyButton.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                addMoney();
+            }
+        });
+
+        addDeptButton.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                addDept();
             }
         });
 
@@ -48,7 +59,7 @@ public class AdminPanelActivity extends AppCompatActivity {
         TextView totalMoney = (TextView)findViewById(R.id.totalMoney);
         TextView userCount  = (TextView)findViewById(R.id.userCount);
 
-        totalDept.setText("Total Dept : " + String.valueOf(app.accounts.totalDept()));
+        totalDept.setText("Total Debt : " + String.valueOf(app.accounts.totalDept()));
         totalMoney.setText("Total Money : " + String.valueOf(app.accounts.totalMoney()));
         userCount.setText("Total Users : " + String.valueOf(app.accounts.list.size()));
     }
@@ -83,10 +94,115 @@ public class AdminPanelActivity extends AppCompatActivity {
         builder.show();
     }
 
-
     @Override
     public void onResume(){
         super.onResume();
         init();
+    }
+
+    public void addMoney(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Enter username to add money");
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+        builder.setView(input);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (app.accounts.findAccount(input.getText().toString()) != -1) {
+                        addMoneySub(input.getText().toString());
+                } else {
+                    TextView statusLabel = (TextView) findViewById(R.id.statusLabel);
+                    statusLabel.setText("Status : User not found!");
+                }
+
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+    }
+
+    public void addMoneySub(String u){
+        final String username = u;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Enter amount of money");
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+        builder.setView(input);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                app.accounts.getObj(app.accounts.findAccount(username)).
+                        addMoney(Double.parseDouble(input.getText().toString()));
+                init();
+                TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
+                statusLabel.setText("Status : Money Added!");
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+    }
+
+    public void addDept(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Enter username to add dept");
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+        builder.setView(input);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (app.accounts.findAccount(input.getText().toString()) != -1) {
+                    addDeptSub(input.getText().toString());
+                } else {
+                    TextView statusLabel = (TextView) findViewById(R.id.statusLabel);
+                    statusLabel.setText("Status : User not found!");
+                }
+
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+    }
+
+    public void addDeptSub(String u){
+        final String username = u;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Enter amount of debt");
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+        builder.setView(input);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                app.accounts.getObj(app.accounts.findAccount(username)).
+                        addDept(Double.parseDouble(input.getText().toString()));
+                init();
+                TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
+                statusLabel.setText("Status : Debt Added!");
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
     }
 }

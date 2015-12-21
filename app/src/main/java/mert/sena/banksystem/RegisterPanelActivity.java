@@ -25,7 +25,11 @@ public class RegisterPanelActivity extends AppCompatActivity {
                         TextView pinCodeText = (TextView)findViewById(R.id.pinCodeText);
                         TextView passwordText = (TextView)findViewById(R.id.passwordText);
                         TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
-                        if(app.accounts.addAccount(nameText.getText().toString(), addressText.getText().toString(),
+                        if(nameText.getText().length()==0 || addressText.getText().length()==0||
+                                limitText.getText().length()==0 || usernameText.getText().length()==0||
+                                pinCodeText.getText().length()==0||passwordText.getText().length()==0){
+                         statusLabel.setText("Status : Please fill blanks!");
+                        }else if(app.accounts.addAccount(nameText.getText().toString(), addressText.getText().toString(),
                                 Integer.parseInt(String.valueOf(limitText.getText())),
                                 usernameText.getText().toString(),
                                 passwordText.getText().toString(),

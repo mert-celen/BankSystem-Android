@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="mert.sena.banksystem.CashierActivity"
-    android:background="#637bf4">
+    android:background="#598584">
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +17,8 @@
         android:text="Username :"
         android:id="@+id/textView12"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,9 +26,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Amount : "
         android:id="@+id/textView13"
-        android:layout_below="@+id/textView12"
+        android:layout_below="@+id/usernameText"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="103dp" />
+        android:layout_marginTop="40dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -36,7 +37,7 @@
         android:ems="10"
         android:id="@+id/amountText"
         android:layout_alignTop="@+id/textView13"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignStart="@+id/usernameText" />
 
     <EditText
         android:layout_width="wrap_content"

@@ -30,7 +30,10 @@ public class LoginActivity extends AppCompatActivity {
                         TextView password = (TextView)findViewById(R.id.passwordBox);
 
                         int index = app.accounts.findAccount(username.getText().toString());
-                        if(index==-1){
+                        if(username.getText().length()==0){
+                            TextView t = (TextView)findViewById(R.id.statusLabel);
+                            t.setText("Status : Enter something!");
+                        }else if(index==-1){
                             TextView t = (TextView)findViewById(R.id.statusLabel);
                             t.setText("Status : Account not found!");
                         }else{
@@ -81,10 +84,8 @@ public class LoginActivity extends AppCompatActivity {
             TextView statusLabel = (TextView)findViewById(R.id.statusLabel);
             TextView username = (TextView)findViewById(R.id.usernameBox);
             public void onClick(DialogInterface dialog, int which) {
-                Log.i("mertFilter",username.getText().toString());
                 boolean flag = app.accounts.checkPin(username.getText().toString(),
                         Integer.parseInt(input.getText().toString()));
-                Log.i("mertFilter",input.getText().toString());
                 if (flag) {
                     newpw(username.getText().toString());
                 } else {
