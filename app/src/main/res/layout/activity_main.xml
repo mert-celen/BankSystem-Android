@@ -38,8 +38,7 @@
         android:text="Welcome to the CTIS Bank"
         android:id="@+id/currentButton"
         android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/loginButton"
-        android:layout_marginTop="34dp" />
+        android:layout_alignEnd="@+id/loginButton" />
 
     <Button
         android:layout_width="wrap_content"

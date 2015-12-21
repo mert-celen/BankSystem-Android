@@ -11,12 +11,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
 public class MainActivity extends AppCompatActivity {
     private String adminPassword = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Firebase.setAndroidContext(this);
         init();
     }
 
@@ -72,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
     }
 
     private void checkAdmin() {
