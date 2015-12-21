@@ -17,9 +17,9 @@
         android:id="@+id/loginButton"
         android:width="250dp"
         android:height="120dp"
+        android:layout_marginTop="39dp"
         android:layout_below="@+id/currentButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -29,8 +29,7 @@
         android:width="250dp"
         android:height="120dp"
         android:layout_below="@+id/loginButton"
-        android:layout_alignStart="@+id/loginButton"
-        android:layout_marginTop="44dp" />
+        android:layout_alignStart="@+id/loginButton" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,13 +41,14 @@
         android:layout_alignEnd="@+id/loginButton"
         android:layout_marginTop="34dp" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Loading"
-        android:id="@+id/updatesText"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:text="Cashier"
+        android:id="@+id/cashierButton"
+        android:layout_below="@+id/registerButton"
+        android:layout_alignStart="@+id/registerButton"
+        android:layout_alignEnd="@+id/registerButton"
+        android:height="120dp" />
 
 </RelativeLayout>

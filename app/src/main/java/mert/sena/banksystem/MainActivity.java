@@ -6,27 +6,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
-import android.util.Log;
 import android.widget.Button;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
-
-import java.util.Map;
-
 public class MainActivity extends AppCompatActivity {
-    private Firebase firebase;
     private String adminPassword = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Firebase.setAndroidContext(this);
         init();
     }
 
@@ -44,21 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Button loginButton = (Button) findViewById(R.id.loginButton);
         Button registerButton = (Button) findViewById(R.id.registerButton);
         TextView adminButton = (TextView) findViewById(R.id.currentButton);
-        final TextView updatesText = (TextView)findViewById(R.id.updatesText);
-        firebase = new Firebase("https://sweltering-torch-6571.firebaseio.com/Testing");
-
-        firebase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String newStr = (String)dataSnapshot.getValue();
-                updatesText.setText(newStr);
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
+        Button cashierButton = (Button)findViewById(R.id.cashierButton);
 
         loginButton.setOnClickListener(
                 new Button.OnClickListener() {
@@ -84,6 +60,15 @@ public class MainActivity extends AppCompatActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         checkAdmin();
+                    }
+                }
+        );
+
+        cashierButton.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent1 = new Intent(MainActivity.this, CashierActivity.class);
+                        startActivity(intent1);
                     }
                 }
         );

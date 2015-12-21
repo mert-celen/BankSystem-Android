@@ -48,7 +48,7 @@ public class AccountActivity extends AppCompatActivity {
         withdrawButton.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
-withdrawMoney();
+                        withdrawMoney();
                     }
                 }
         );

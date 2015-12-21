@@ -14,41 +14,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Ready"
-        android:id="@+id/statusLabel"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/nameText"
-        android:layout_marginTop="41dp"
-        android:layout_below="@+id/statusLabel"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Name"
         android:id="@+id/textView2"
-        android:layout_alignTop="@+id/nameText"
+        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="10dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/addressText"
-        android:layout_below="@+id/nameText"
-        android:layout_alignStart="@+id/nameText" />
+        android:layout_marginTop="25dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,9 +26,69 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Address"
         android:id="@+id/textView3"
-        android:layout_alignTop="@+id/addressText"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="6dp" />
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Limit"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Username"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Password"
+        android:id="@+id/textView6"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Pin Code"
+        android:id="@+id/textView9"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/nameText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/addressText"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -67,75 +97,8 @@
         android:ems="10"
         android:id="@+id/limitText"
         android:layout_below="@+id/addressText"
-        android:layout_alignStart="@+id/addressText" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Limit"
-        android:id="@+id/textView4"
-        android:layout_alignTop="@+id/limitText"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_marginTop="6dp"
-        android:layout_marginRight="10dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="REGISTER"
-        android:id="@+id/registerButton"
-        android:layout_marginBottom="36dp"
-        android:width="200dp"
-        android:height="75dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Username"
-        android:id="@+id/textView5"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_marginTop="6dp"
-        android:layout_below="@+id/limitText" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/passwordText"
-        android:layout_below="@+id/usernameText"
-        android:layout_alignStart="@+id/limitText" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Password"
-        android:id="@+id/textView6"
-        android:layout_alignTop="@+id/passwordText"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberPassword"
-        android:ems="10"
-        android:id="@+id/pinCodeText"
-        android:layout_alignTop="@+id/textView9"
-        android:layout_alignStart="@+id/passwordText" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Pin Code"
-        android:id="@+id/textView9"
-        android:layout_below="@+id/passwordText"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -143,7 +106,47 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/usernameText"
-        android:layout_alignTop="@+id/textView5"
-        android:layout_alignStart="@+id/limitText" />
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passwordText"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:ems="10"
+        android:id="@+id/pinCodeText"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/registerButton"
+        android:layout_below="@+id/pinCodeText"
+        android:layout_alignParentStart="true"
+        android:width="350dp"
+        android:height="100dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Status : Ready"
+        android:id="@+id/statusLabel"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

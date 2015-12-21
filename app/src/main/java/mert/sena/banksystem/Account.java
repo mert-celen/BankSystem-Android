@@ -58,6 +58,7 @@ public class Account {
         if (amount >= m) {
             dept -= m;
             limit += m;
+            amount-=m;
             if (limit > original_limit)
                 limit = original_limit;
             return true;
@@ -112,5 +113,9 @@ public class Account {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void addDept(double amount){
+        dept+=amount;
     }
 }

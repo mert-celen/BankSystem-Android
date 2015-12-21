@@ -13,7 +13,7 @@ public class AccountList{
 
     public boolean addAccount(String name, String detail, double limit, String username, String password,int pinCode){
         if(isUserAvailable(username)){
-        Account dummy = new Account(name,detail,10000,325,limit,username,password,pinCode);
+        Account dummy = new Account(name,detail,1100,0,limit,username,password,pinCode);
         boolean flag = list.add(dummy);
 
         return flag;
@@ -77,15 +77,6 @@ public class AccountList{
         }
         return null;
     }
-    
-//    public Account getObj(String username,String password){
-//        for (Account a:list){
-//            if(a.getUsername().compareTo(username)==0 && a.getPassword().compareTo(password)==0)
-//                return a;
-//        }
-//        return null;
-//    }
-
 
     public int findAccount(String username){
         for (Account a:list) {
@@ -167,6 +158,18 @@ public class AccountList{
         for (Account a: list) {
             if(a.getName().compareTo(username)==0)
                 a.setPassword(password);
+        }
+    }
+
+
+    public void addDept(double amount,String username){
+        for (Account a: list) {
+            if(a.getUsername().compareTo(username)==0){
+                a.addDept(amount);
+                System.out.println("dept added");
+                break;
+            }
+
         }
     }
 }
